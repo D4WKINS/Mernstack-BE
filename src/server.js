@@ -4,6 +4,7 @@ import mongoose from 'mongoose'
 import listEndPoints from 'express-list-endpoints'
 import exercisesRouter from './services/exercise/index.js'
 import usersRouter from './services/user/index.js'
+import {notFound, serverError} from './errorhandler.js'
 
 import dotenv from 'dotenv'
 
@@ -21,7 +22,9 @@ if(!uri) throw new Error('No uri specified')
 app.use(cors()) // allow all requests from all domains, unless specifically configured otherwise
 app.use(express.json()) // This allows us to send JSON to the server
 app.use('/exercises', exercisesRouter)
-app.use('/users', usersRouter)
+app.use('/users', usersRouter)// Mount the router on the path /users so to access the routes we need to go to localhost:5000/users
+app.get('*',notFound)
+app.use(serverError)
 
 console.table(listEndPoints(app))
 

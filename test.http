@@ -1,0 +1,8 @@
+###
+@HOST ='http://localhost:5000'
+
+POST {{HOST}}/users
+
+{
+    "username": "bromans98"
+}
