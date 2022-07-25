@@ -1,8 +1,71 @@
 ###
-@HOST ='http://localhost:5000'
+@HOST =http://localhost:5000
 
+###
+
+//USERS
+
+GET {{HOST}}/users
+###
+
+GET {{HOST}}/users/62d9d73fdee9679cafe1e3f5
+###
 POST {{HOST}}/users
+content-Type: application/json
 
 {
-    "username": "bromans98"
+    "username": "Cinderella456"
 }
+
+###
+
+PUT {{HOST}}/users/62da6d7e25290b36c826492b
+content-Type: application/json
+
+{
+    "username": "Cinderella683"
+}
+
+###
+
+DELETE {{HOST}}/users/62da6d7e25290b36c826492b
+content-Type: application/json
+
+
+//EXERCISES
+
+
+###
+
+GET {{HOST}}/exercises
+###
+
+GET {{HOST}}/exercises/62da765f03b29b23777d1b89
+###
+POST {{HOST}}/exercises
+content-Type: application/json
+
+{
+    "username": "bromans95",
+    "description": "Push-ups",
+    "duration": "10",
+    "date": "2019-01-01"
+}
+
+###
+
+PUT {{HOST}}/exercises/62da765f03b29b23777d1b89
+content-Type: application/json
+
+{
+    "username": "bromans95",
+    "description": "Sit-ups",
+    "duration": "10",
+    "date": "2019-01-01"
+}
+
+
+
+###
+
+DELETE {{HOST}}/exercises/62da7b3367932892c9fae521
