@@ -1,7 +1,6 @@
-import e from "express"
 import express from "express"
-
-import ExerciseModel from "./schema.js"
+import { exercise } from "../../types/index"
+import ExerciseModel from "./schema"
 
 const exercisesRouter = express.Router()
 
@@ -36,10 +35,11 @@ exercisesRouter.post("/", async (req, res, next) => {
         const description = req.body.description
         const date = Date.parse(req.body.date) //Date.parse converts the string to a date object
 
+        //
         const newExercise = new ExerciseModel({
             username,
-            description,
             duration,
+            description,
             date
         })
 

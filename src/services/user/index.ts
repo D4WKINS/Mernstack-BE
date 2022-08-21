@@ -1,6 +1,6 @@
 import express from "express"
 import mongoose from "mongoose"
-import UserModel from "./schema.js"
+import UserModel from "./schema"
 
 const usersRouter = express.Router()
 
